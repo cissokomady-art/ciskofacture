@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, FileText, ArrowRight, Sparkles } from "lucide-react";
+import { Menu, X, FileText, UserPlus } from "lucide-react";
 import { useAuth } from "@/lib/store/auth-context";
 
 export function LandingNavbar() {
@@ -63,36 +63,24 @@ export function LandingNavbar() {
           </a>
         </div>
 
-        {/* Right CTA Actions: Se connecter & Essai gratuit */}
+        {/* Right CTA Actions: Se connecter & Créer un compte */}
         <div className="hidden sm:flex items-center gap-2.5 shrink-0">
-          {user ? (
-            <Link
-              href="/tableau-de-bord"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-[9px] bg-brand-600 text-white text-xs font-semibold landing-cta-primary shadow-xs whitespace-nowrap"
-            >
-              <span>Accéder au Dashboard</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          ) : (
-            <>
-              {/* Lien Se connecter */}
-              <Link
-                href="/connexion"
-                className="px-3 py-2 text-xs font-semibold text-gray-700 hover:text-brand-600 hover:bg-gray-50 rounded-[8px] transition-all whitespace-nowrap"
-              >
-                Se connecter
-              </Link>
+          {/* Lien Se connecter */}
+          <Link
+            href="/connexion"
+            className="px-3.5 py-2 text-xs font-semibold text-gray-700 hover:text-brand-600 hover:bg-gray-50 rounded-[8px] transition-all whitespace-nowrap"
+          >
+            Se connecter
+          </Link>
 
-              {/* Bouton Essai gratuit */}
-              <Link
-                href="/inscription"
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-[9px] bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold landing-cta-primary shadow-xs whitespace-nowrap"
-              >
-                <Sparkles className="w-3.5 h-3.5" />
-                <span className="whitespace-nowrap">Essai gratuit</span>
-              </Link>
-            </>
-          )}
+          {/* Bouton Créer un compte */}
+          <Link
+            href="/inscription"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-[9px] bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white text-xs font-semibold landing-cta-primary shadow-xs whitespace-nowrap"
+          >
+            <UserPlus className="w-3.5 h-3.5" />
+            <span className="whitespace-nowrap">Créer un compte</span>
+          </Link>
         </div>
 
         {/* Mobile Hamburger Toggle */}
@@ -139,35 +127,23 @@ export function LandingNavbar() {
               Tarifs
             </a>
 
-            {/* Mobile Actions : Se connecter & Essai gratuit */}
+            {/* Mobile Actions : Se connecter & Créer un compte */}
             <div className="pt-3.5 border-t border-gray-100 flex flex-col gap-2">
-              {user ? (
-                <Link
-                  href="/tableau-de-bord"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full text-center py-2.5 rounded-[9px] bg-brand-600 text-white text-xs font-semibold shadow-xs"
-                >
-                  Accéder au Dashboard
-                </Link>
-              ) : (
-                <>
-                  <Link
-                    href="/connexion"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="w-full text-center py-2.5 rounded-[8px] border border-gray-200 text-gray-800 text-xs font-semibold hover:bg-gray-50 transition-colors"
-                  >
-                    Se connecter
-                  </Link>
-                  <Link
-                    href="/inscription"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="w-full inline-flex items-center justify-center gap-1.5 text-center py-2.5 rounded-[9px] bg-brand-600 text-white text-xs font-semibold shadow-xs"
-                  >
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>Essai gratuit</span>
-                  </Link>
-                </>
-              )}
+              <Link
+                href="/connexion"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full text-center py-2.5 rounded-[8px] border border-gray-200 text-gray-800 text-xs font-semibold hover:bg-gray-50 transition-colors"
+              >
+                Se connecter
+              </Link>
+              <Link
+                href="/inscription"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full inline-flex items-center justify-center gap-1.5 text-center py-2.5 rounded-[9px] bg-brand-600 text-white text-xs font-semibold shadow-xs"
+              >
+                <UserPlus className="w-3.5 h-3.5" />
+                <span>Créer un compte</span>
+              </Link>
             </div>
           </div>
         </div>
