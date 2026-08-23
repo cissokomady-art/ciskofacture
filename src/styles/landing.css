@@ -1,0 +1,125 @@
+/* Styles et Animations Dédiés pour la Landing Page Ciskofacture */
+
+/* Ombres douces et effets de profondeur */
+.landing-shadow-sm {
+  box-shadow: 0 2px 8px -2px rgba(2, 0, 54, 0.05), 0 1px 4px -1px rgba(139, 21, 56, 0.04);
+}
+
+.landing-shadow-md {
+  box-shadow: 0 12px 32px -8px rgba(2, 0, 54, 0.08), 0 4px 12px -2px rgba(139, 21, 56, 0.05);
+}
+
+.landing-shadow-lg {
+  box-shadow: 0 20px 45px -12px rgba(2, 0, 54, 0.12), 0 8px 24px -4px rgba(139, 21, 56, 0.08);
+}
+
+.landing-shadow-glow {
+  box-shadow: 0 0 35px -5px rgba(139, 21, 56, 0.25), 0 10px 25px -5px rgba(2, 0, 54, 0.15);
+}
+
+/* Animations de flottement fluide */
+.landing-float-1 {
+  animation: landingFloat1 6s ease-in-out infinite;
+}
+
+.landing-float-2 {
+  animation: landingFloat2 8s ease-in-out infinite;
+}
+
+.landing-float-3 {
+  animation: landingFloat3 7s ease-in-out infinite;
+}
+
+.landing-pulse-slow {
+  animation: landingPulse 4s ease-in-out infinite;
+}
+
+@keyframes landingFloat1 {
+  0% {
+    transform: translateY(0px) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-6deg);
+  }
+}
+
+@keyframes landingFloat2 {
+  0% {
+    transform: translateY(0px) rotate(8deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(11deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(8deg);
+  }
+}
+
+@keyframes landingFloat3 {
+  0% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+}
+
+@keyframes landingPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/* Effets de boutons CTA interactifs */
+.landing-cta-primary {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landing-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(139, 21, 56, 0.35);
+}
+
+.landing-cta-primary:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.landing-cta-secondary {
+  transition: all 0.2s ease;
+}
+
+.landing-cta-secondary:hover {
+  transform: translateY(-2px);
+  border-color: #74102d;
+  background-color: #fdf2f4;
+}
+
+.landing-cta-secondary:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Grille Bento & Cartes */
+.landing-bento-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.landing-bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -10px rgba(2, 0, 54, 0.1);
+}
+
+/* Défilement fluide des ancres */
+html {
+  scroll-behavior: smooth;
+}
