@@ -81,9 +81,38 @@
   }
 }
 
+/* Animation Défilement Continu Horizontal (Infinite Marquee) pour Mobile */
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 1.25rem;
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1.25rem;
+  min-width: 100%;
+  animation: scrollMarquee 18s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 1.25rem));
+  }
+}
+
 /* Effets de boutons CTA interactifs */
 .landing-cta-primary {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .landing-cta-primary:hover {
@@ -96,7 +125,7 @@
 }
 
 .landing-cta-secondary {
-  transition: all 0.2s ease;
+  transition: all 0.18s ease;
 }
 
 .landing-cta-secondary:hover {

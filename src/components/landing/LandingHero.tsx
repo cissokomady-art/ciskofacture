@@ -8,21 +8,19 @@ import {
   CheckCircle2,
   FileCheck2,
   TrendingUp,
-  ShieldCheck,
   Zap,
   Smartphone,
 } from "lucide-react";
-import { formatFCFA } from "@/lib/format/currency";
 
 export function LandingHero() {
   return (
-    <section className="relative pt-32 sm:pt-40 pb-20 sm:pb-28 overflow-hidden">
+    <section className="relative pt-32 sm:pt-40 lg:pt-44 pb-20 sm:pb-28 lg:pb-32 overflow-hidden">
       {/* Background Soft Glow Gradients */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-tr from-brand-100/40 via-brand-50/20 to-transparent blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[850px] h-[500px] bg-gradient-to-tr from-brand-100/40 via-brand-50/20 to-transparent blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         {/* Floating Mini Badge 1 - Top Left */}
-        <div className="hidden lg:flex items-center gap-2.5 absolute top-4 left-4 bg-white/95 backdrop-blur-md border border-gray-200/90 rounded-2xl p-3 landing-shadow-md landing-float-1 z-20">
+        <div className="hidden lg:flex items-center gap-2.5 absolute top-6 left-2 xl:left-4 bg-white/95 backdrop-blur-md border border-gray-200/90 rounded-2xl p-3 landing-shadow-md landing-float-1 z-20">
           <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm">
             <Zap className="w-5 h-5 text-emerald-600" />
           </div>
@@ -33,7 +31,7 @@ export function LandingHero() {
         </div>
 
         {/* Floating Mini Badge 2 - Top Right */}
-        <div className="hidden lg:flex items-center gap-2.5 absolute top-12 right-6 bg-white/95 backdrop-blur-md border border-gray-200/90 rounded-2xl p-3 landing-shadow-md landing-float-2 z-20">
+        <div className="hidden lg:flex items-center gap-2.5 absolute top-12 right-2 xl:right-6 bg-white/95 backdrop-blur-md border border-gray-200/90 rounded-2xl p-3 landing-shadow-md landing-float-2 z-20">
           <div className="w-9 h-9 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-sm">
             <TrendingUp className="w-5 h-5 text-brand-600" />
           </div>
@@ -44,46 +42,49 @@ export function LandingHero() {
         </div>
 
         {/* Tag Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[7px] bg-brand-50 border border-brand-100/80 text-brand-700 text-xs font-semibold mb-6">
-          <Sparkles className="w-3.5 h-3.5 text-brand-600" />
-          <span>La solution de facturation SaaS n°1 en zone UEMOA</span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-[7px] bg-brand-50 border border-brand-100/80 text-brand-700 text-xs font-semibold mb-6 sm:mb-8">
+          <Sparkles className="w-3.5 h-3.5 text-brand-600 shrink-0" />
+          <span className="whitespace-nowrap">La solution de facturation SaaS n°1 en zone UEMOA</span>
         </div>
 
         {/* Hero Title */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight max-w-4xl mx-auto leading-[1.15] sm:leading-[1.12] mb-6">
-          Fini les factures sur <br />
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight max-w-4xl mx-auto leading-[1.18] sm:leading-[1.14] mb-6">
+          Fini les factures sur <br className="hidden sm:inline" />
           <span className="text-brand-600 bg-gradient-to-r from-brand-600 via-brand-700 to-brand-800 bg-clip-text text-transparent">
             Word et Excel.
           </span>
         </h1>
 
         {/* Hero Subtitle */}
-        <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
+        <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8 sm:mb-10">
           La facturation simple et moderne conçue pour les entrepreneurs africains.
           Créez, envoyez et suivez vos paiements en quelques clics en <span className="font-semibold text-gray-900">Franc CFA (FCFA)</span>.
         </p>
 
-        {/* CTA Buttons with Micro-interactions */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 max-w-md mx-auto mb-16 sm:mb-20">
+        {/* CTA Buttons - Strict Single Line (whitespace-nowrap) */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-xl mx-auto mb-16 sm:mb-20">
+          {/* Bouton Principal : Commencer gratuitement */}
           <Link
             href="/inscription"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-[9px] bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white font-semibold text-sm landing-cta-primary landing-shadow-glow"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 rounded-[9px] bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white font-semibold text-xs sm:text-sm whitespace-nowrap landing-cta-primary landing-shadow-glow"
           >
-            <span>Commencer gratuitement</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="whitespace-nowrap">Commencer gratuitement</span>
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </Link>
+
+          {/* Bouton Secondaire : Découvrir la plateforme */}
           <a
             href="#pourquoi-changer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-[9px] bg-white hover:bg-brand-50 border border-gray-200/90 text-gray-800 font-semibold text-sm landing-cta-secondary shadow-xs"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-[9px] bg-white hover:bg-gray-50 active:bg-gray-100 border border-gray-300/90 hover:border-gray-400 text-gray-800 font-semibold text-xs sm:text-sm whitespace-nowrap landing-cta-secondary shadow-2xs hover:shadow-xs"
           >
-            <span>Découvrir la plateforme</span>
+            <span className="whitespace-nowrap">Découvrir la plateforme</span>
           </a>
         </div>
 
         {/* Showcase Dashboard Card with Floating Badges */}
         <div className="relative max-w-5xl mx-auto">
           {/* Floating Badge 3 - Middle Left */}
-          <div className="hidden md:flex items-center gap-2.5 absolute -left-10 top-1/3 bg-white/95 backdrop-blur-md border border-gray-200/90 rounded-2xl p-3 landing-shadow-lg landing-float-3 z-30">
+          <div className="hidden md:flex items-center gap-2.5 absolute -left-8 lg:-left-10 top-1/3 bg-white/95 backdrop-blur-md border border-gray-200/90 rounded-2xl p-3 landing-shadow-lg landing-float-3 z-30">
             <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
               <Smartphone className="w-5 h-5 text-amber-600" />
             </div>
@@ -94,7 +95,7 @@ export function LandingHero() {
           </div>
 
           {/* Floating Badge 4 - Bottom Right */}
-          <div className="hidden md:flex items-center gap-2.5 absolute -right-8 -bottom-6 bg-white/95 backdrop-blur-md border border-gray-200/90 rounded-2xl p-3.5 landing-shadow-lg landing-float-2 z-30">
+          <div className="hidden md:flex items-center gap-2.5 absolute -right-6 lg:-right-8 -bottom-6 bg-white/95 backdrop-blur-md border border-gray-200/90 rounded-2xl p-3.5 landing-shadow-lg landing-float-2 z-30">
             <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
               <FileCheck2 className="w-5 h-5 text-emerald-600" />
             </div>
@@ -107,7 +108,7 @@ export function LandingHero() {
           {/* Main Visual Preview Window */}
           <div className="bg-white border border-gray-200/90 rounded-2xl p-2 sm:p-3 landing-shadow-lg overflow-hidden">
             <div className="bg-gray-50/80 rounded-xl border border-gray-100 p-4 sm:p-6 text-left">
-              {/* Fake Window Header */}
+              {/* Window Header */}
               <div className="flex items-center justify-between pb-4 mb-5 border-b border-gray-200/80">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-rose-400" />
