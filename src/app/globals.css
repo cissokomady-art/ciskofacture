@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "../styles/landing.css";
+
 :root {
   --background: #F8F9FA;
   --foreground: #18181B;
